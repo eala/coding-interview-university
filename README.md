@@ -243,7 +243,7 @@ Sometimes the classes are not in session so you have to wait a couple of months,
 - [X] [Whiteboarding](https://medium.com/@dpup/whiteboarding-4df873dbba2e#.hf6jn45g1)
 - [X] [Effective Whiteboarding during Programming Interviews](http://www.coderust.com/blog/2014/04/10/effective-whiteboarding-during-programming-interviews/)
 - [X] [Demystifying Tech Recruiting](https://www.youtube.com/watch?v=N233T0epWTs)
-- [ ] How to Get a Job at the Big 4:
+- [x] How to Get a Job at the Big 4:
     - [X] [How to Get a Job at the Big 4 - Amazon, Facebook, Google & Microsoft (video)](https://www.youtube.com/watch?v=YJZCUhxNCv8)
 - [ ] Cracking The Coding Interview Set 1:
     - [ ] [Gayle L McDowell - Cracking The Coding Interview (video)](https://www.youtube.com/watch?v=rEJzOhC5ZtQ)
@@ -365,7 +365,7 @@ through my notes and making flashcards so I could review.
 
 Read please so you won't make my mistakes:
 
-[Retaining Computer Science Knowledge](https://startupnextdoor.com/retaining-computer-science-knowledge/).
+- [X] [Retaining Computer Science Knowledge](https://startupnextdoor.com/retaining-computer-science-knowledge/).
 
 A course recommended to me (haven't taken it): [Learning how to Learn](https://www.coursera.org/learn/learning-how-to-learn)
 
@@ -1450,7 +1450,7 @@ You're never really done.
     technologies and algorithms, so you'll have a bigger toolbox.
 
 - ### Compilers
-    - [How a Compiler Works in ~1 minute (video)](https://www.youtube.com/watch?v=IhC7sdYe-Jg)
+    - [X] [How a Compiler Works in ~1 minute (video)](https://www.youtube.com/watch?v=IhC7sdYe-Jg)
     - [Harvard CS50 - Compilers (video)](https://www.youtube.com/watch?v=CSZLNYF4Klo)
     - [C++ (video)](https://www.youtube.com/watch?v=twodd1KFfGk)
     - [Understanding Compiler Optimization (C++) (video)](https://www.youtube.com/watch?v=FnGCDLhaxKU)
