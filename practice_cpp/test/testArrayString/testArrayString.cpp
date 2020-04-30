@@ -30,17 +30,17 @@ TEST_F(ArrayStringTest, emptyIsUniqueChars) {
 }
 
 TEST_F(ArrayStringTest, isCombination) {
-    EXPECT_EQ(CArrayString::isisStringsHaveSameCombinationChar("abcd", "bcad"), true);
+    EXPECT_EQ(CArrayString::isStringsHaveSameCombinationChar("abcd", "bcad"), true);
 }
 
 TEST_F(ArrayStringTest, ALongIsNotCombinations) {
-    EXPECT_EQ(CArrayString::isisStringsHaveSameCombinationChar("abcde", "bcad"), false);
+    EXPECT_EQ(CArrayString::isStringsHaveSameCombinationChar("abcde", "bcad"), false);
 }
 
 TEST_F(ArrayStringTest, BLongIsNotCombinations) {
-    EXPECT_EQ(CArrayString::isisStringsHaveSameCombinationChar("abcd", "bcade"), false);
+    EXPECT_EQ(CArrayString::isStringsHaveSameCombinationChar("abcd", "bcade"), false);
 }
 
 TEST_F(ArrayStringTest, RepeatIsNotCombinations) {
-    EXPECT_EQ(CArrayString::isisStringsHaveSameCombinationChar("abcde", "aabbccddee"), false);
+    EXPECT_EQ(CArrayString::isStringsHaveSameCombinationChar("abcde", "aabbccddee"), false);
 }
