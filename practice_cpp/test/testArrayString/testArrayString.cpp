@@ -44,3 +44,11 @@ TEST_F(ArrayStringTest, BLongIsNotCombinations) {
 TEST_F(ArrayStringTest, RepeatIsNotCombinations) {
     EXPECT_EQ(CArrayString::isStringsHaveSameCombinationChar("abcde", "aabbccddee"), false);
 }
+
+TEST_F(ArrayStringTest, ReplaceEmptyMrJohnSmith) {
+    EXPECT_EQ(CArrayString::replaceEmptyString("Mr John Smith    ", 13), "Mr%20John%20Smith");
+}
+
+TEST_F(ArrayStringTest, ReplaceSingleEmpty) {
+    EXPECT_EQ(CArrayString::replaceEmptyString("A B  ", 3), "A%20B");
+}

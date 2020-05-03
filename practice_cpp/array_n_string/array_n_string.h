@@ -6,4 +6,5 @@ class CArrayString {
     public:
         static bool isAllCharUnique(const string str);
         static bool isStringsHaveSameCombinationChar(string a, string b);
+        static string replaceEmptyString(string str, int replacedLength);
 };

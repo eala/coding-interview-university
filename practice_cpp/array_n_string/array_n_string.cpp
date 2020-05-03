@@ -55,3 +55,22 @@ bool CArrayString::isStringsHaveSameCombinationChar(string a, string b) {
 
     return (hash.size() == 0);
 }
+
+string CArrayString::replaceEmptyString(string str, int realLength) {
+    if (realLength == 0) return "";
+
+    int idx = str.length() - 1;
+    str[idx] = '\0';
+
+    for (int i = realLength - 1; i > 0; i--){
+        if (str[i] == ' ') {
+            str[idx--] = '0';
+            str[idx--] = '2';
+            str[idx--] = '%';
+        } else {
+            str[idx--] = str[i];
+        }
+    }
+
+    return str;
+}
