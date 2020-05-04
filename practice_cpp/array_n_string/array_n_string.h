@@ -9,4 +9,5 @@ class CArrayString {
         static string replaceEmptyString(string str, int replacedLength);
         static bool isPalindromePermutation(string str);
         static bool isOneEditDistance(string str1, string str2);
+        static string compressString(string str);
 };

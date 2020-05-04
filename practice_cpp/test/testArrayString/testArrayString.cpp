@@ -84,3 +84,7 @@ TEST_F(ArrayStringTest, OneEditDistanceReplace) {
 TEST_F(ArrayStringTest, OneEditDistanceReplaceTwo) {
     EXPECT_EQ(CArrayString::isOneEditDistance("pale", "bake"), false);
 }
+
+TEST_F(ArrayStringTest, CompressStringNormal) {
+    EXPECT_EQ(CArrayString::compressString("aabcccccaaa"), "a2b1c5a3");
+}

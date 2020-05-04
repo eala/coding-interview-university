@@ -132,3 +132,29 @@ bool CArrayString::isOneEditDistance(string str1, string str2) {
     return false;
 }
 
+string CArrayString::compressString(string str) {
+    string compressStr;
+    int count = 1;
+    int idx = 0;
+    for (int i = 1; i < str.length(); i++){
+        if (str[i] == str[idx]) {
+            count++;
+        } else {
+            compressStr += str[idx];
+            compressStr += to_string(count);
+            count = 1;
+            idx = i;
+        }
+
+        if (i == str.length() - 1) {
+            compressStr += str[idx];
+            compressStr += to_string(count);
+        }
+
+    }
+    if (str.length() <= compressStr.length())
+        return str;
+    return compressStr;
+}
+ 
+
