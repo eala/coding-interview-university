@@ -57,7 +57,7 @@ bool CArrayString::isStringsHaveSameCombinationChar(string a, string b) {
 }
 
 string CArrayString::replaceEmptyString(string str, int realLength) {
-    if (realLength == 0) return "";
+    if (str.length() == realLength) return str;
 
     int idx = str.length() - 1;
     str[idx] = '\0';
@@ -74,3 +74,61 @@ string CArrayString::replaceEmptyString(string str, int realLength) {
 
     return str;
 }
+
+bool CArrayString::isPalindromePermutation(string str) {
+    // assume it is ASCII
+    int charCount[128] = {0};
+    for (int i = 0; i < str.length(); i++) {
+        if (str[i] == ' ') continue;
+        int idx = str[i] - 'A';
+        assert (idx >= 0 && idx <= 128);
+        if (charCount[idx] > 0) {
+            charCount[idx]--;
+        } else {
+            charCount[idx]++;
+        }
+    }
+
+    int sum = 0;
+    for (int i = 0; i < 128; i++) {
+        sum += charCount[i];
+        if (sum > 1) return false;
+    }
+    return true;
+}
+
+static bool isOneMoreChar(string longStr, string shortStr) {
+    bool foundDiff = false;
+    char *pLong = &longStr[0];
+    char *pShort = &shortStr[0];
+    for (int i = 0; i < shortStr.length(); i++) {
+        if (*pLong != *pShort){
+            if (foundDiff) return false;
+            pLong++;
+            foundDiff = true;
+        }
+        pLong++;
+        pShort++;
+    }
+    return true;
+}
+
+bool CArrayString::isOneEditDistance(string str1, string str2) {
+    bool oneEdited = false;
+    // replace
+    if (str1.length() == str2.length()) {
+        for (int i = 0; i < str1.length(); i++) {
+            if (str1[i] != str2[i]) {
+                if (oneEdited) return false;
+                oneEdited = true;
+            }
+        }
+        return true;
+    } else if (str1.length() - str2.length() == 1) {
+        return isOneMoreChar(str1, str2);
+    } else if (str2.length() - str1.length() == 1) {
+        return isOneMoreChar(str2, str1);
+    }
+    return false;
+}
+

@@ -52,3 +52,35 @@ TEST_F(ArrayStringTest, ReplaceEmptyMrJohnSmith) {
 TEST_F(ArrayStringTest, ReplaceSingleEmpty) {
     EXPECT_EQ(CArrayString::replaceEmptyString("A B  ", 3), "A%20B");
 }
+
+TEST_F(ArrayStringTest, ReplaceEmptyNoNeed) {
+    EXPECT_EQ(CArrayString::replaceEmptyString("ABBBB", 5), "ABBBB");
+}
+
+TEST_F(ArrayStringTest, PalindromPermuteOneCharLeft) {
+    EXPECT_EQ(CArrayString::isPalindromePermutation("ABA"), true);
+}
+
+TEST_F(ArrayStringTest, PalindromPermutePureSymmetry) {
+    EXPECT_EQ(CArrayString::isPalindromePermutation("ABBA"), true);
+}
+
+TEST_F(ArrayStringTest, PalindromPermuteNegative) {
+    EXPECT_EQ(CArrayString::isPalindromePermutation("ABCC"), false);
+}
+
+TEST_F(ArrayStringTest, OneEditDistanceRemove) {
+    EXPECT_EQ(CArrayString::isOneEditDistance("pale", "ple"), true);
+}
+
+TEST_F(ArrayStringTest, OneEditDistanceRemoveTail) {
+    EXPECT_EQ(CArrayString::isOneEditDistance("pales", "pale"), true);
+}
+
+TEST_F(ArrayStringTest, OneEditDistanceReplace) {
+    EXPECT_EQ(CArrayString::isOneEditDistance("pale", "bale"), true);
+}
+
+TEST_F(ArrayStringTest, OneEditDistanceReplaceTwo) {
+    EXPECT_EQ(CArrayString::isOneEditDistance("pale", "bake"), false);
+}
