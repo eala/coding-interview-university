@@ -65,6 +65,14 @@ TEST_F(ArrayStringTest, PalindromPermutePureSymmetry) {
     EXPECT_EQ(CArrayString::isPalindromePermutation("ABBA"), true);
 }
 
+TEST_F(ArrayStringTest, PalindromPermuteWithSpace) {
+    EXPECT_EQ(CArrayString::isPalindromePermutation("atco cta"), true);
+}
+
+TEST_F(ArrayStringTest, PalindromPermuteWithSpaceCapital) {
+    EXPECT_EQ(CArrayString::isPalindromePermutation("Tact Coa"), false);
+}
+
 TEST_F(ArrayStringTest, PalindromPermuteNegative) {
     EXPECT_EQ(CArrayString::isPalindromePermutation("ABCC"), false);
 }
