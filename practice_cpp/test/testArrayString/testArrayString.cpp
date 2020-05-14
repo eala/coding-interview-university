@@ -96,3 +96,43 @@ TEST_F(ArrayStringTest, OneEditDistanceReplaceTwo) {
 TEST_F(ArrayStringTest, CompressStringNormal) {
     EXPECT_EQ(CArrayString::compressString("aabcccccaaa"), "a2b1c5a3");
 }
+
+TEST_F(ArrayStringTest, RotateImg) {
+    const int side = 4;
+
+    unsigned char **img = new unsigned char*[4];
+    unsigned char **expect = new unsigned char*[4];
+    for (int i = 0; i< 4; i++) {
+        img[i] = new unsigned char[4];
+        expect[i] = new unsigned char[4];
+    }
+
+    unsigned char img_data [4][4] = {
+        {1, 2, 3, 4},
+        {5, 6, 7, 8},
+        {9, 10, 11, 12},
+        {13, 14, 15, 16}
+    };
+
+    unsigned char expect_data [4][4] = {
+        {13, 9, 5, 1},
+        {14, 10, 6, 2},
+        {15, 11, 7, 3},
+        {16, 12, 8, 4}
+    };
+
+    for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < 4; i++) {
+            img[j][i] = img_data[j][i];
+            expect[j][i] = expect_data[j][i];
+        }
+    }
+
+    CArrayString::rotateImg(img, side);
+
+    for (int j = 0; j < side ; j++) {
+        for (int i = 0; i < side; i++) {
+            EXPECT_EQ(img[j][i], expect[j][i]);
+        }
+    }
+}

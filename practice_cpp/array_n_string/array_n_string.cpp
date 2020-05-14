@@ -156,5 +156,15 @@ string CArrayString::compressString(string str) {
         return str;
     return compressStr;
 }
- 
 
+void CArrayString::rotateImg(unsigned char **img, int side) {
+    for (int layer = 0; layer < side / 2; layer++) {
+        for (int start = layer; start < side - 1 - layer; start++) {
+            unsigned char tmp = img[layer][start];
+            img[layer][start] = img[side - 1 - start][layer];
+            img[side - 1 - start][layer] = img[side - 1 - layer][side - 1 - start];
+            img[side - 1 - layer][side - 1 - start] = img[start][side - 1 - layer];
+            img[start][side - 1 - layer] = tmp;
+        }
+    }
+}
