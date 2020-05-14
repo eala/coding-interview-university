@@ -1,5 +1,8 @@
 #include <unordered_set>
+#include <vector>
 #include "array_n_string.h"
+
+using namespace std;
 
 #define ONLY_ASCII 1
 bool CArrayString::isAllCharUnique(const string str) {
@@ -165,6 +168,32 @@ void CArrayString::rotateImg(unsigned char **img, int side) {
             img[side - 1 - start][layer] = img[side - 1 - layer][side - 1 - start];
             img[side - 1 - layer][side - 1 - start] = img[start][side - 1 - layer];
             img[start][side - 1 - layer] = tmp;
+        }
+    }
+}
+
+void CArrayString::setNullRowCol(int **img, int rows, int cols) {
+    vector<int> cols_set;
+    vector<int> rows_set;
+
+    for (int j = 0; j < rows; j++) {
+        for (int i = 0; i < cols; i++) {
+            if (img[j][i] == 0) {
+                cols_set.push_back(i);
+                rows_set.push_back(j);
+            }
+        }
+    }
+
+    for (int i = 0; i < cols_set.size(); i++) {
+        for (int j = 0; j < rows; j++) {
+            img[j][cols_set[i]] = 0;
+        }
+    }
+
+    for (int i = 0; i < rows_set.size(); i++) {
+        for (int j = 0; j < cols; j++) {
+            img[rows_set[i]][j] = 0;
         }
     }
 }

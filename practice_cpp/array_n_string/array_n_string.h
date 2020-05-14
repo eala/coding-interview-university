@@ -11,4 +11,5 @@ class CArrayString {
         static bool isOneEditDistance(string str1, string str2);
         static string compressString(string str);
         static void rotateImg(unsigned char **img, int side);
+        static void setNullRowCol(int **img, int rows, int cols);
 };

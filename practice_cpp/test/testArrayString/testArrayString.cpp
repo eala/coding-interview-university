@@ -136,3 +136,43 @@ TEST_F(ArrayStringTest, RotateImg) {
         }
     }
 }
+
+TEST_F(ArrayStringTest, NullRowCol) {
+    const int rows = 4;
+    const int cols = 3;
+    int **img = new int*[rows];
+    int **expect = new int*[rows];
+    for (int i = 0; i < rows; i++) {
+        img[i] = new int[rows];
+        expect[i] = new int[rows];
+    }
+
+    int img_data[rows][cols] = {
+        {1, 2, 3},
+        {5, 6, 7},
+        {0, 10, 11},
+        {13, 14, 15}
+    };
+
+    int expect_data[rows][cols] = {
+        {0, 2, 3},
+        {0, 6, 7},
+        {0, 0, 0},
+        {0, 14, 15}
+    };
+
+    for (int j = 0; j < rows; j++) {
+        for (int i = 0; i < cols; i++) {
+            img[j][i] = img_data[j][i];
+            expect[j][i] = expect_data[j][i];
+        }
+    }
+
+    CArrayString::setNullRowCol(img, rows, cols);
+
+    for (int j = 0; j < rows ; j++) {
+        for (int i = 0; i < cols; i++) {
+            EXPECT_EQ(img[j][i], expect[j][i]);
+        }
+    }
+}
