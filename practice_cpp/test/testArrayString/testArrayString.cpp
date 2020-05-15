@@ -176,3 +176,11 @@ TEST_F(ArrayStringTest, NullRowCol) {
         }
     }
 }
+
+TEST_F(ArrayStringTest, str2RotatedFromStr1) {
+    EXPECT_EQ(CArrayString::isStringRotatedFromAnother("waterbottle", "erbottlewat"), true);
+}
+
+TEST_F(ArrayStringTest, str2RotatedFromStr1Negative) {
+    EXPECT_EQ(CArrayString::isStringRotatedFromAnother("testwaterbottle", "erbottlewat"), false);
+}

@@ -12,4 +12,5 @@ class CArrayString {
         static string compressString(string str);
         static void rotateImg(unsigned char **img, int side);
         static void setNullRowCol(int **img, int rows, int cols);
+        static bool isStringRotatedFromAnother(string s1, string s2);
 };

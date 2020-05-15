@@ -197,3 +197,11 @@ void CArrayString::setNullRowCol(int **img, int rows, int cols) {
         }
     }
 }
+
+static bool isSubString(string str1, string str2) {
+    return std::string::npos != str1.find(str2);
+}
+
+bool CArrayString::isStringRotatedFromAnother(string s1, string s2) {
+    return isSubString(s1 + s1, s2);
+}
