@@ -32,3 +32,6 @@ endif()
 
 include_directories(${CMAKE_SOURCE_DIR}/array_n_string)
 add_subdirectory(testArrayString)
+
+include_directories(${CMAKE_SOURCE_DIR}/linked_list)
+add_subdirectory(testLinkedList)
